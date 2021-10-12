@@ -1,7 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 
 :root {
   --primaty-white: #fff;
+  --primary-purple: #916BBF;
+  --primary-dark: rgba(255,255,255, 0);
 }
 
 body {
@@ -9,6 +52,10 @@ body {
 }
 
 /**NavBar**/
+nav{
+  z-index: 2;
+}
+
 .logo {
   width: 16.25rem;
   height: auto;
@@ -30,10 +77,100 @@ nav ul li{
   color: var(--primaty-white) !important;
   margin-right: 0.75rem;
   margin-left: 00.75rem;
+  border-top: 0.1875rem solid var(--primary-dark);
 }
 
 .navbabr-brand {
   max-width: 17.25rem;
   padding: 0 !important;
   height: 6rem !important;
+}
+
+@media(max-width: 768px){
+  .navbabr-brand{
+    width: 7rem;
+  }
+}
+
+.navbar-nav > li > a.active, .navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid var(--primary-purple);
+}
+
+.navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid var(--primary-purple);
+}
+
+/**Header**/
+.header-wraper {
+  position: relative;
+  background: url(background.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.main-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  text-align: center;
+  font-family: "Montserrat";
+}
+
+.main-info h1 {
+  color: var(--primary-purple);
+}
+
+/**TypedText**/
+.typed-text{
+  font-size: 2rem;
+  color: var(--primary-purple);
+}
+
+@media(max-width: 768px){
+  .main-info h1{
+    font-size: 1.7rem !important;
+  }
+  .typed-text {
+    font-size: 1.3rem !important;
+
+  }
+}
+
+/**HeaderMainOfferButton**/
+.btn-main-offer {
+  border:  1px solid var(--primary-purple);
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0.625rem, 0.75rem, 0.75rem, 0.75rem;
+  color: var(--primaty-white);
+  margin: 2rem;
+}
+
+.btn-main-offer:hover{
+  text-decoration: none;
+  background-color: var(--primaty-white);
+  color: #fff;
+  transition: .2s ease-in-out;
+}
+
+/**ParticlesJS**/
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100hv;
+  z-index: 1;
+  width: 100hv
+}
+
+@media(max-width: 768px){
+  .particles-canvas {
+    display: none;
+  }
 }
